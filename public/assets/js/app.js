@@ -114,11 +114,23 @@ $(function() {
       $('html').attr('class', 'color-sidebar sidebarcolor8');
     }
 
+	/**
+     *  Mostrar el año actual en el footer
+     */
+    function showCurrentYear() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-date').textContent = currentYear;
+    }
+    showCurrentYear();
 
+	$('#table-users').DataTable({
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json'
+        }
+    });
 
-
-
-
-
+	setTimeout(function() {
+        document.querySelector('.show-alerts').classList.add('show');
+    }, 1000);
 
 });

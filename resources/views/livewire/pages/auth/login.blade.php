@@ -19,8 +19,10 @@ new #[Layout('layouts.guest')] class extends Component
         $this->form->authenticate();
 
         Session::regenerate();
+        
+        usleep(500000);
 
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        $this->redirectIntended(default: route('user.index', absolute: false), navigate: true);
     }
 }; ?>
 
